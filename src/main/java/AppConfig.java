@@ -5,33 +5,33 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class AppConfig {
 
-    @Bean(name = "BMW")
-    public Transport getBmwBean() {
+    @Bean(name = "car")
+    public Car getCarBean() {
         return new Car("BMW");
     }
 
 
-    @Bean(name = "Audi")
-    public Transport getAudiBean() {
+    @Bean(name = "pickup")
+    public Pickup getPickupBean() {
         return new Pickup("Audi");
     }
 
-    @Bean(name = "Mers")
-    public Transport getMersBean() {
+    @Bean(name = "bus")
+    public Bus getBusBean() {
         return new Bus("Mers");
     }
 
     @Bean(name = "driver1")
     public Driver getDriver1() {
-        return new Driver("Вася",getBmwBean());
+        return new Driver("Вася",getCarBean());
     }
 
     @Bean(name = "driver2")
     public Driver getDriver2() {
-        return new Driver("Петя", getAudiBean());
+        return new Driver("Петя", getPickupBean());
     }
     @Bean(name = "driver3")
     public Driver getDriver3() {
-        return new Driver("Nikola", getMersBean());
+        return new Driver("Nikola", getBusBean());
     }
 }
